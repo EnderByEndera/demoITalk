@@ -39,7 +39,7 @@ public class BillTransactionTest {
     @Test
     public void getBillByID() {
         Bill bill = billTransaction.getBillByID("3");
-        assertEquals(4500.00, bill.getBillAmount(), 112.0);
+        assertEquals(1544.1, bill.getBillAmount(), 112.0);
     }
 
     @Test

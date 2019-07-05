@@ -1,4 +1,4 @@
-package com.italk.demo.dao;
+package com.italk.demo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

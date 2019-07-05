@@ -37,7 +37,7 @@ public class UserTransactionTest {
     @Test
     public void queryUsers() {
         List<User> users = userTransaction.queryUsers();
-        assertEquals(1, users.size());
+        assertEquals(2, users.size());
     }
 
     @Test

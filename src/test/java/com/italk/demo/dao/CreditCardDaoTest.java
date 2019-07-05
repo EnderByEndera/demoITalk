@@ -35,7 +35,7 @@ public class CreditCardDaoTest {
     @Test
     public void queryCreditCards() {
         List<CreditCard> creditCards = creditCardDao.queryCreditCards();
-        assertEquals(1, creditCards.size());
+        assertEquals(2, creditCards.size());
     }
 
     @Test
