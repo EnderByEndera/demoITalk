@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<style type="text/css">
+    @import url("main-interface-css.css");
+</style>
+<head>
+    <meta charset="utf-8">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+
+    </script>
+
+    <style type="text/css">
+
+        #section {
+            font-size: 30px;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+<body>
+<div id="header">
+    <h1>Account Management System</h1>
+</div>
+
+<div id="left">
+
+</div>
+<div id="section">
+    您的余额为：4246.58¥
+    <p></p>
+    <script type="text/javascript">
+
+        $("p").append("Some appended text.");
+
+        function fangfa() {
+            $.ajax
+            ({
+                url: "https://192.168.1.102", //请求路径
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    var obj = eval('(' + json + ')');
+                }
+            });
+        }
+
+    </script>
+
+
+</div>
+
+<div background="P.jpg" id="right">
+
+</div>
+
+<div id="footer">
+    0000
+</div>
+
+
+</body>
+</html>

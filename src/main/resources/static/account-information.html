@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<style type="text/css">
+    @import url("main-interface-css.css");
+</style>
+<head>
+    <meta charset="utf-8">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+
+    </script>
+
+    <style type="text/css">
+
+        #section {
+            font-size: 30px;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+<body>
+<div id="header">
+    <h1>Account Management System</h1>
+</div>
+
+<div id="left">
+
+</div>
+<div id="section">
+
+    您最近的消费记录为：
+    <table class="gridtable" top="800px" width="1000px">       
+        <tr id="zero">      
+            <th>序号</th>
+                 
+            <th>金额</th>
+                
+            <th>信用卡号</th>
+                         
+            <th>账单类型</th>
+                  
+        </tr>
+        <tr>      
+            <th>1</th>
+                 
+            <th>120.00¥</th>
+                
+            <th>12345678</th>
+                          
+            <th>网银消费</th>
+                  
+        </tr>
+          
+        <tr>      
+            <th>2</th>
+                 
+            <th>115.50¥</th>
+                
+            <th>12345678</th>
+                            
+            <th>取款</th>
+                  
+        </tr>
+         
+        <tr>      
+            <th>3</th>
+                 
+            <th>55.00¥</th>
+                
+            <th>12345678</th>
+                           
+            <th>取款</th>
+                  
+        </tr>
+         
+        <tr>      
+            <th>4</th>
+                 
+            <th>68.34¥</th>
+                
+            <th>12345678</th>
+                           
+            <th>转账</th>
+                  
+        </tr>
+         
+        <tr>      
+            <th>5</th>
+                 
+            <th>555.00¥</th>
+                
+            <th>12345678</th>
+                      
+            <th>网银消费</th>
+                  
+        </tr>
+         
+        <tr>      
+            <th>6</th>
+                 
+            <th>48.67¥</th>
+                
+            <th>12345678</th>
+                      
+            <th>网银消费</th>
+                  
+        </tr>
+         
+        <tr>      
+            <th>7</th>
+                 
+            <th>47.55¥</th>
+                
+            <th>12345678</th>
+                      
+            <th>网银消费</th>
+                  
+        </tr>
+         
+        <tr>      
+            <th>8</th>
+                 
+            <th>68.00¥</th>
+                
+            <th>12345678</th>
+                     
+            <th>转账</th>
+                  
+        </tr>
+         
+        <tr>      
+            <th>9</th>
+                 
+            <th>89.56¥</th>
+                
+            <th>12345678</th>
+                     
+            <th>网银消费</th>
+                  
+        </tr>
+         
+        <tr>      
+            <th>10</th>
+                 
+            <th>48.00¥</th>
+                
+            <th>12345678</th>
+                       
+            <th>账单类型</th>
+                  
+        </tr>
+         
+
+    </table>
+
+    <script>
+
+        var ipAddress = null;
+
+        $(document).ready(function () {
+
+            var cel = ["<tr>      <th>9</th>     <th>8888888888</th>    <th>8</th>      <th>8</th>     <th>8</th>     <th> 8</th>      </tr>",
+                "<tr>      <th>9</th>     <th>8</th>    <th>8</th>      <th>8</th>     <th>8</th>     <th> 8</th>      </tr>"];
+            $.each(cel, function () {
+                $("#tb").append(this);
+            });
+
+        });
+
+    </script>
+
+
+</div>
+
+<div background="P.jpg" id="right">
+
+</div>
+
+<div id="footer">
+    made by joh
+</div>
+
+
+</body>
+</html>

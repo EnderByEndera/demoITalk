@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.italk.demo.dao.UserDao">
+    <select id="queryUsers" resultType="com.italk.demo.entity.User">
+        SELECT *
+        FROM user;
+    </select>
+
+    <select id="queryUser" resultType="com.italk.demo.entity.User">
+        SELECT *
+        FROM user
+        WHERE user_name = #{userName};
+    </select>
+
+    <select id="queryUserByID" parameterType="java.lang.String" resultType="com.italk.demo.entity.User">
+        SELECT *
+        FROM user
+        WHERE user_number = #{userID};
+    </select>
+
+    <insert id="addUser" useGeneratedKeys="true" keyProperty="userNumber" keyColumn="user_number"
+            parameterType="com.italk.demo.entity.User">
+        INSERT INTO user (user_number, user_name, user_gender, user_address, user_job, id_number, passwd)
+        VALUES (#{userNumber}, #{userName}, #{userGender}, #{userAddress}, #{userJob}, #{idNumber}, #{passwd})
+    </insert>
+
+    <update id="updateUser" parameterType="com.italk.demo.entity.User">
+        UPDATE user
+        <set>
+            <if test="userName != null">user_name = #{userName},</if>
+            <if test="userGender != null">user_gender = #{userGender},</if>
+            <if test="userAddress != null">user_address = #{userAddress},</if>
+            <if test="userJob != null">user_job = #{userJob},</if>
+            <if test="idNumber != null">id_number = #{idNumber},</if>
+            <if test="passwd != null">passwd = #{passwd}</if>
+        </set>
+        WHERE user_number = #{userNumber};
+    </update>
+
+    <delete id="deleteUser" parameterType="com.italk.demo.entity.User">
+        DELETE
+        FROM user
+        WHERE user_number = #{userNumber};
+    </delete>
+</mapper>

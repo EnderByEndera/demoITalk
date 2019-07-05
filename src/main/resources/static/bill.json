@@ -1,0 +1,11 @@
+{
+  "first": [
+    {
+      "billNumber": "1",
+      "creditCardNumber": "1122",
+      "billType": "take",
+      "billAmount": 223.12,
+      "billCreateTime": "2019-08-27"
+    }
+  ]
+}

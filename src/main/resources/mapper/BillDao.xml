@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.italk.demo.dao.BillDao">
+    <select id="queryBillByID" parameterType="java.lang.String" resultType="com.italk.demo.entity.Bill">
+        SELECT *
+        FROM bill
+        WHERE bill.bill_number = #{billNumber};
+    </select>
+
+    <select id="queryBills" parameterType="java.lang.String" resultType="com.italk.demo.entity.Bill">
+        SELECT *
+        FROM bill
+                 JOIN user ON bill.user_number = user.user_number
+        WHERE bill.user_number = #{userNumber};
+
+    </select>
+
+    <insert id="addBill" parameterType="com.italk.demo.entity.Bill" useGeneratedKeys="true" keyProperty="billNumber"
+            keyColumn="bill_number">
+        INSERT INTO bill(bill_number, credit_card_number, user_number, bill_type, bill_amount)
+        VALUES (#{billNumber}, #{creditCardNumber}, #{userNumber}, #{billType}, #{billAmount});
+    </insert>
+
+    <update id="updateBill" parameterType="com.italk.demo.entity.Bill">
+        UPDATE bill
+        <set>
+            <if test="billNumber != null">bill_number = #{billNumber},</if>
+            <if test="creditCardNumber != null">credit_card_number = #{creditCardNumber},</if>
+            <if test="userNumber != null">user_number = #{userNumber},</if>
+            <if test="billType != null">bill_type = #{billType},</if>
+            <if test="billAmount != null">bill_amount = #{billAmount}</if>
+        </set>
+        WHERE bill_number = #{billNumber};
+    </update>
+
+    <delete id="deleteBill" parameterType="java.lang.String">
+        DELETE
+        FROM bill
+        WHERE bill_number = #{billNumber};
+
+    </delete>
+</mapper>

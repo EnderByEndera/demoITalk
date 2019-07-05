@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.italk.demo.dao.CreditCardDao">
+    <select id="queryCreditCards" resultType="com.italk.demo.entity.CreditCard">
+        SELECT *
+        FROM credit_card;
+
+    </select>
+
+    <select id="queryCreditCardByID" parameterType="java.lang.String" resultType="com.italk.demo.entity.CreditCard">
+        SELECT *
+        FROM credit_card
+        WHERE card_number = #{cardNumber};
+
+    </select>
+
+    <insert id="addCard" parameterType="com.italk.demo.entity.CreditCard" useGeneratedKeys="true"
+            keyProperty="cardNumber" keyColumn="card_number">
+        INSERT INTO credit_card(card_number, card_type, card_passwd, card_level, total_range, avai_range)
+        VALUES (#{cardNumber}, #{cardType}, #{cardPasswd}, #{cardLevel}, #{totalRange}, #{avaiRange});
+    </insert>
+
+    <update id="updateCard" parameterType="com.italk.demo.entity.CreditCard">
+        UPDATE credit_card
+        <set>
+            <if test="cardType != null">card_type = #{cardType},</if>
+            <if test="cardLevel != null">card_level = #{cardLevel},</if>
+            <if test="totalRange != null">total_range = #{totalRange},</if>
+            <if test="avaiRange != null">avai_range = #{avaiRange}</if>
+        </set>
+        WHERE card_number = #{cardNumber}
+    </update>
+
+    <delete id="deleteCard" parameterType="java.lang.String">
+        DELETE
+        FROM credit_card
+        WHERE card_number = #{cardNumber};
+    </delete>
+</mapper>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style type="text/css">
+
+    @import url("login-css.css");
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+
+    <script>
+
+        function yes() {
+            alert("yes");
+        }
+
+        function Check() {
+            alert("wwwww");
+            var user_name = form1.user.value;
+            var user_pwd = form1.pwd.value;
+
+            if (user_name == "administer")&&
+            (user_pwd == "19491001");
+            {
+                alert("wwwww");
+            }
+        else
+            {
+                alert("用户名或密码错误！");
+            }
+        }
+
+    </script>
+</head>
+<body background="P.jpg">
+<div id="nav">
+    <br>
+    <h1 id="login">Log in</h1>
+
+    <div id="word">
+
+        <form id="form1">
+
+            <div class="fancy-input">
+                <div class="input-container">
+                    <input name="user" pattern=".{6,}"/>
+                    <label data-placeholder="UserName" data-placeholder-short="UserName"><span
+                            class="sr-only">UserName</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="fancy-input">
+                <div class="input-container">
+                    <input min-length=".{6,}" name="pwd" type="Password"/>
+                    <label data-placeholder="Password" data-placeholder-short="Password"><span
+                            class="sr-only">Password</span>
+                    </label>
+                </div>
+            </div>
+
+            <br>
+
+    </div>
+
+    <button id="button" onclick="window.open('main-interface.html');"><span>Log in</span></button>
+</div>
+
+</form>
+
+</body>
+
+</html>
